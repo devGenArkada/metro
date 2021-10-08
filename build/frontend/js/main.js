@@ -71,22 +71,6 @@ var appHeader = (function () {
       return false;
     });
 
-    // смещение экрана при клике на меню
-/*     $(".js-nav").on("touchstart click", function() {
-      var sectionName = $(this).attr("href");
-
-      var scrollPosition = $(sectionName).offset().top - 10;
-
-      $("html, body").animate({
-        scrollTop: scrollPosition 
-      }, 400);
-
-      if ( $(".header__nav").hasClass("open") ) {
-        $(".header__nav, .js-headerToggle").removeClass("open");
-      }
-
-      return false;
-    }); */
   };
 
   return {
@@ -294,14 +278,42 @@ var appContent = (function() {
 
 
   var events = function() {
-
-
+    
   };
+
+  var blocks = function() {
+    var headerHeight = $('.header').height();
+    var firstScreenHeight = 'calc(100vh - ' + headerHeight + 'px)';
+    $('.firstScreen').css('min-height', firstScreenHeight);
+    
+    var firstScreenHeight = $('.firstScreen').height();
+    var firstScreenTitleHeight = $('.firstScreen__title').height();
+    var firstScreenBlockHeight = 'calc(' +firstScreenHeight + 'px - ' + +firstScreenTitleHeight + 'px)';
+    $('.firstScreenBlock').css('min-height', firstScreenBlockHeight);
+    // console.log(firstScreenBlockHeight);
+
+
+    // firstScreenBlock width
+    var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
+    var firstScreenTitleStrongLeft = +firstScreenBlockLeftWidth + 20;
+    var firstScreenTitleStrongLeft = firstScreenTitleStrongLeft + 'px';
+    $('.firstScreen__title strong').css('left', firstScreenTitleStrongLeft);
+
+    var firstScreenTitleHeight = $('.firstScreen__title').height();
+    var firstScreenTitleStrongTop = +firstScreenTitleHeight + 20;
+    var firstScreenTitleStrongTop = firstScreenTitleStrongTop + 'px';
+    $('.firstScreen__title strong').css('top', firstScreenTitleStrongTop);
+
+    // var 
+    
+  };
+  
 
   return {
     init: function() {
       events();
       slider();
+      blocks();
     }
   }
 }());

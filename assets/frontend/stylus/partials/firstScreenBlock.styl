@@ -1,0 +1,47 @@
+.firstScreen
+  padding-top 17px
+  position relative
+
+.firstScreenTitleWrapper
+  wrapper()
+  display flex
+  align-items flex-end
+  justify-content space-between
+  padding-right cw(90)
+  span
+    fz(46)
+    line-height (63/46)
+    color: #23164B;
+    font-family: 'Yellowtail', cursive;
+
+.firstScreen__title
+  font-weight 300
+  fz(140)
+  line-height 1.11
+  letter-spacing 0.01em
+  text-transform uppercase
+  color #393939
+  font-family: 'Oswald', sans-serif;
+  strong
+    position absolute
+    top 200px
+    left 50%
+    letter-spacing 0.04em
+    text-transform uppercase
+    color #fff
+
+
+
+.firstScreenBlock
+  background-image url('../images/firstBlockBg.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+  display flex
+
+.firstScreenBlockLeft
+  background: rgba(12, 16, 51, 0.31);
+  backdrop-filter: blur(27px);
+  width 37%
+  display flex
+  align-items stretch

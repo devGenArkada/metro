@@ -20,10 +20,16 @@
     <meta property="og:url" content="">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
-    <title>Title text</title>
+    <title>Метро</title>
     <link rel="canonical" href="">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
 </head>
 
@@ -69,72 +75,32 @@
     </svg>
     <noscript class="noscript">Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.</noscript>
     <header class="header">
-        <div class="header__top">
-            <div class="header__box header__box--top">
-                <div class="header__main-text">Институт экспертной и&nbsp;контрольно-надзорной деятельности НИИСФ&nbsp;РААСН</div>
-                <div class="header__nav">
-                    <nav class="nav"><a class="nav__link js-nav" href="#">Пункт меню 1</a><a class="nav__link js-nav" href="#">Пункт меню 2</a><a class="nav__link js-nav" href="#">Пункт меню 3</a><a class="nav__link js-nav" href="#">Пункт меню 4</a><a class="nav__link js-nav"
-                        href="#">Пункт меню 5</a><a class="nav__link js-nav" href="#">Пункт меню 6</a>
-                    </nav>
-                </div>
-                <div class="header__link-toggle js-headerToggle"><span></span>
-                </div>
+        <div class="header__top headerTop">
+            <div class="headerTop__flagBox headerTopFlagBox">
+                <img class="headerTopFlagBox__img" src="images/flag1.png">
+            </div>
+            <div class="headerTop__logoBox headerTopLogoBox">
+                <img class="headerTopLogoBox__img" src="images/logo1.svg">
+            </div>
+            <div class="headerTop__flagBox headerTopFlagBox">
+                <img class="headerTopFlagBox__img" src="images/flag2.png">
             </div>
         </div>
-        <div class="header__bottom">
-            <div class="header__box header__box--bottom">
-                <div class="header__logo">
-                    <div class="logo">
-                        <div class="logo__box">
-                            <img class="logo__img" src="images/logo.png">
-                            <div class="logo__text">
-                                <p>НИИСФ РААСН</p>
-                                <p>НАУЧНО-ИССЛЕДОВАТЕЛЬСИКЙ ИНСТИТУТ
-                                    <br>СТРОИТЕЛЬНОЙ ФИЗИКИ
-                                    <br>РОССИЙСКОЙ АКАДЕМИИ АРХИТЕКТУРЫ
-                                    <br>И&nbsp;СТРОИТЕЛЬНЫХ НАУК</p>
-                            </div>
-                        </div>
-                        <div class="logo__box">
-                            <img class="logo__img" src="images/logo2.png">
-                            <div class="logo__text">
-                                <p>УНИВЕРСИТЕТ МИНСТРОЯ</p>
-                                <p>МИНИСТЕРСТВО СТРОИТЕЛЬСТВА
-                                    <br>И&nbsp;ЖИЛИЩНО-КОММУНАЛЬНОГО ХОЗЯЙСТВА
-                                    <br>РОССИЙСКОЙ ФЕДЕРАЦИИ</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header__phone"><a class="phone phone--header" href="tel:+74955067152">+7 (495) 506-71-52<svg class="phone__ico phone__ico--header ico ico--phone"><use xlink:href="#ico-phone"></use></svg></a>
-                </div>
-                <div class="header__mail"><a class="mail mail--header" href="mailto:iexp@niisf.ru">iexp@niisf.ru<svg class="mail__ico mail__ico--header ico ico--mail"><use xlink:href="#ico-mail"></use></svg></a>
-                </div>
-                <div class="header__search-block">
-                    <div class="search-block">
-                        <form class="search-block__form search-block__form--hide form">
-                            <input class="search-block__input form__input form__input--search js-requireText" type="text" value="">
-                            <button class="form__submit form__submit--search disabled" type="submit" disabled="disabled" tabindex="3">
-                                <svg class="search-block__ico search-block__ico--header ico ico--search">
-                                    <use xlink:href="#ico-search"></use>
-                                </svg>
-                            </button>
-                        </form>
-                        <a class="search-block__link js-searchLink" href="#">
-                            <svg class="search-block__ico search-block__ico--header ico ico--search">
-                                <use xlink:href="#ico-search"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="header__user-link">
-                    <a class="user-link" href="#">
-                        <svg class="user-link__ico user-link__ico--header ico ico--user">
-                            <use xlink:href="#ico-user"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+        <div class="header__menuWrapper headerMenuWrapper">
+            <ul class="headerMenuList">
+                <li><a href="#">О Краснодаре</a>
+                </li>
+                <li><a href="#">Краснодарский метрополитен</a>
+                </li>
+                <li><a href="#">Законодательная база</a>
+                </li>
+                <li><a href="#">Видеопрезентация</a>
+                </li>
+                <li><a href="#">Тендеры. Контракты</a>
+                </li>
+                <li><a href="#">Структура дирекции по строительству</a>
+                </li>
+            </ul>
         </div>
     </header>
     <div class="page">
@@ -240,40 +206,7 @@
                     </div>
                 </div>
                 <div class="page__main-footer">
-                    <footer class="footer">
-                        <div class="footer__box">
-                            <div class="footer__title title">Об институте</div>
-                            <div class="footer__list"><a class="footer__link" href="#">Общая информация</a><a class="footer__link" href="#">Лицензия и учредительные документы</a><a class="footer__link" href="#">Правовые и правоустанавливающие документы</a>
-                            </div>
-                        </div>
-                        <div class="footer__box">
-                            <div class="footer__title title">Поступление и обучение</div>
-                            <div class="footer__list"><a class="footer__link" href="#">Программы повышения квалификации</a><a class="footer__link" href="#">Программы профессиональной переподготовки</a><a class="footer__link" href="#">Система дистанционного обучения</a><a class="footer__link"
-                                href="#">Документы для поступающих</a>
-                            </div>
-                        </div>
-                        <div class="footer__box">
-                            <div class="footer__title title">Заявка на обучение</div>
-                            <div class="footer__form">
-                                <form class="form form--footer" method="POST" action="">
-                                    <input class="form__input form__input--footer js-requireText" type="text" name="name" value="" placeholder="Ваше имя" minlength="2" tabindex="1">
-                                    <input class="form__input form__input--footer js-requirePhone" type="text" name="phone" value="" placeholder="Номер телефона" minlength="15" tabindex="2">
-                                    <button class="button form__submit form__submit--footer disabled" type="submit" disabled="disabled" tabindex="3">Отправить</button>
-                                </form>
-                                <div class="form__loader">
-                                    <svg class="img-loader">
-                                        <use xlink:href="#ico-loader"></use>
-                                    </svg>
-                                </div>
-                                <div class="form__answer-send">
-                                    <p>Спасибо, заявка отправлена.</p>
-                                </div>
-                                <div class="form__answer-error">
-                                    <p>Произошла ошибка, попробуйте&nbsp;снова.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                    <footer class="footer"></footer>
                 </div>
             </div>
         </div>
