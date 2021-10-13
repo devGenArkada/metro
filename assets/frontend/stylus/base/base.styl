@@ -239,3 +239,65 @@ a
   &:hover
     background: lighten(#23164B, 20%)
 // scheme page styles end
+
+
+// laws page styles start
+.lawsBlock
+  padding-top 68px
+  padding-bottom 93px
+  wrapper()
+.lawsBlock__title
+  padding-left cw(15)
+  margin-bottom cw(49)
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  max-width 610px
+  position relative
+  &::before
+    content ''
+    position absolute
+    left 0
+    top 0
+    bottom 0
+    width 4px
+    background-color #E42829
+.lawsBlock__pWrapper
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+    max-width 910px
+    margin-bottom cw(25)
+.lawsBlock__pWrapper--central 
+  margin-left 17%
+  margin-bottom cw(35)
+  p 
+    max-width 850px
+    margin-bottom 0
+  .lawsBlock__pUpperCase
+    text-transform uppercase
+.lawsBlockTextBlockColumns
+  display flex
+  justify-content space-between
+  margin-bottom cw(68)
+.lawsBlockTextBlockColumn
+  width 30%
+  &--infoCard
+    width 424px
+    .textInfoCard
+      padding 41px 35px 41px
+      margin-bottom 11px
+    .lawsBlockTextBlockColumn__author
+      fz(24)
+      line-height 1.45
+      color #000
+      text-align right
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+
+
+// laws page styles end
