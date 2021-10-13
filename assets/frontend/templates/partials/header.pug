@@ -1,14 +1,15 @@
-svg.hide
-  include svg
+//- svg.hide
+//-   include svg
 
-noscript.noscript Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.
+//- noscript.noscript Чтобы посмотреть сайт включите JavaScript на&nbsp;своём устройстве.
 
 header.header
   .header__top.headerTop
     .headerTop__flagBox.headerTopFlagBox
       img.headerTopFlagBox__img(src="images/flag1.png")
     .headerTop__logoBox.headerTopLogoBox
-      img.headerTopLogoBox__img(src="images/logo1.svg")
+      a(href="index.html") 
+        img.headerTopLogoBox__img(src="images/logo1.svg")
     .headerTop__flagBox.headerTopFlagBox
       img.headerTopFlagBox__img(src="images/flag2.png")
   .header__menuWrapper.headerMenuWrapper
@@ -16,7 +17,7 @@ header.header
       li
         a(href="#") О Краснодаре
       li
-        a(href="#") Краснодарский метрополитен
+        a(href="krd-metro.html") Краснодарский метрополитен
       li
         a(href="#") Законодательная база
       li
@@ -25,55 +26,3 @@ header.header
         a(href="#") Тендеры. Контракты
       li
         a(href="#") Структура дирекции по строительству
-
-
-//- header.header
-//-   .header__top
-//-     .header__box.header__box--top
-//-       .header__main-text Институт экспертной и&nbsp;контрольно-надзорной деятельности НИИСФ&nbsp;РААСН
-//-       .header__nav
-//-         nav.nav
-//-           a.nav__link.js-nav(href="#") Пункт меню 1
-//-           a.nav__link.js-nav(href="#") Пункт меню 2
-//-           a.nav__link.js-nav(href="#") Пункт меню 3
-//-           a.nav__link.js-nav(href="#") Пункт меню 4
-//-           a.nav__link.js-nav(href="#") Пункт меню 5
-//-           a.nav__link.js-nav(href="#") Пункт меню 6
-//-       .header__link-toggle.js-headerToggle
-//-         span
-//-   .header__bottom
-//-     .header__box.header__box--bottom
-//-       .header__logo
-//-         .logo
-//-           .logo__box
-//-             img.logo__img(src="images/logo.png")
-//-             .logo__text 
-//-               p НИИСФ РААСН
-//-               p НАУЧНО-ИССЛЕДОВАТЕЛЬСИКЙ ИНСТИТУТ<br> СТРОИТЕЛЬНОЙ ФИЗИКИ<br> РОССИЙСКОЙ АКАДЕМИИ АРХИТЕКТУРЫ<br> И&nbsp;СТРОИТЕЛЬНЫХ НАУК
-//-           .logo__box
-//-             img.logo__img(src="images/logo2.png")
-//-             .logo__text 
-//-               p УНИВЕРСИТЕТ МИНСТРОЯ
-//-               p МИНИСТЕРСТВО СТРОИТЕЛЬСТВА<br> И&nbsp;ЖИЛИЩНО-КОММУНАЛЬНОГО ХОЗЯЙСТВА<br> РОССИЙСКОЙ ФЕДЕРАЦИИ
-//-       .header__phone
-//-         a.phone.phone--header(href="tel:+74955067152") +7 (495) 506-71-52
-//-           svg.phone__ico.phone__ico--header.ico.ico--phone
-//-             use(xlink:href='#ico-phone')
-//-       .header__mail
-//-         a.mail.mail--header(href="mailto:iexp@niisf.ru") iexp@niisf.ru
-//-           svg.mail__ico.mail__ico--header.ico.ico--mail
-//-             use(xlink:href='#ico-mail')
-//-       .header__search-block
-//-         .search-block
-//-           form.search-block__form.search-block__form--hide.form
-//-             input.search-block__input.form__input.form__input--search.js-requireText(type="text" value="")
-//-             button.form__submit.form__submit--search.disabled(type='submit' disabled="disabled" tabindex="3")
-//-               svg.search-block__ico.search-block__ico--header.ico.ico--search
-//-                 use(xlink:href='#ico-search')
-//-           a.search-block__link.js-searchLink(href="#")
-//-             svg.search-block__ico.search-block__ico--header.ico.ico--search
-//-               use(xlink:href='#ico-search')
-//-       .header__user-link
-//-         a.user-link(href="#")
-//-           svg.user-link__ico.user-link__ico--header.ico.ico--user
-//-             use(xlink:href='#ico-user')

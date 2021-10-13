@@ -3,11 +3,102 @@ html,
 body
   font-size 10px
 
+body
+  font-family: 'HelveticaNeueCyr', sans-serif;
+
+a 
+  color inherit
+  text-decoration none
   
 .hide
   display none
+
+.textInfoCard
+    fz(24)
+    line-height 1.46
+    text-transform uppercase
+    color #fff
+    background-color #23164B
+    strong
+      font-weight bold
 
 // .container
   // max-width 1618px
   // padding 0 15px
   // margin 0 auto
+
+// krdMetro styles start
+.krdmetro
+  wrapper()
+  padding-top cw(62)
+  margin-bottom cw(135)
+  p 
+    fz(20)
+    line-height 1.45
+    color #000
+.krdmetroFirstBlock
+  display flex
+  justify-content space-between
+  margin-bottom 52px
+.krdmetroFirstBlockLeft
+  width 38%
+  h1 
+    padding-left cw(15)
+    margin-bottom cw(64)
+    fz(24)
+    line-height 1.407
+    text-transform uppercase
+    color #000
+    font-family: 'HelveticaNeueCyr', sans-serif;
+    position relative
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 0
+      bottom 0
+      width 4px
+      background-color #E42829
+  p
+    margin-bottom 47px
+  .krdmetroFirstBlockLeft__infoCard
+    padding 12px 28px 12px 52px
+    max-width 420px
+.krdmetroFirstBlockRight
+  width 56%
+  a 
+    display block
+    position relative
+    &::after
+      content url('../images/videoPlayBtn1.svg')
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      transition all .3s
+    &:hover
+      &::after
+        transform translate(-50%, -50%) scale(1.2)
+  img 
+    width 100%
+    height auto
+    object-fit cover
+.krdmetroSecondBlock
+  display flex
+  justify-content space-between
+  align-items stretch
+.krdmetroSecondBlockColumn
+  width 27%
+  display flex
+  flex-direction column
+  justify-content space-between
+  p 
+    margin-bottom 20px
+  img 
+    display block
+    width 100%
+    height auto
+    object-fit cover
+  .krdmetroSecondBlockColumn__infoCard
+    padding 30px 20px 30px 40px
+// krdMetro styles end
