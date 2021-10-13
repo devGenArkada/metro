@@ -3,6 +3,9 @@ html,
 body
   font-size 10px
 
+html
+  scroll-behavior: smooth;
+
 body
   font-family: 'HelveticaNeueCyr', sans-serif;
 
@@ -27,7 +30,7 @@ a
   // padding 0 15px
   // margin 0 auto
 
-// krdMetro styles start
+// krdMetro page styles start
 .krdmetro
   wrapper()
   padding-top cw(62)
@@ -101,4 +104,138 @@ a
     object-fit cover
   .krdmetroSecondBlockColumn__infoCard
     padding 30px 20px 30px 40px
-// krdMetro styles end
+// krdMetro page styles end
+
+// scheme page styles start
+.schemeBlock
+  wrapper()
+  padding-top 89px
+  margin-bottom 145px
+  border-radius 50px
+.schemeBlockImgBlock
+  width 80%
+  margin 0 auto
+  position relative
+  img 
+    display block
+    width 100%
+    height auto
+    object-fit contain
+.schemeBlockImgBlock__GoToLink
+  position absolute
+  top 62px
+  right 43px
+  z-index 2
+  background-color #00FF01
+  border-radius cw(87)
+  padding 17px 23px
+  transition all .3s
+  span
+    font-weight 550
+    fz(18)
+    line-height 1.45
+    padding-right cw(35)
+    text-transform uppercase
+    color #000
+    position relative
+    &::after
+      content url('../images/arrow1.svg')
+      position absolute
+      right 0
+      top -6px
+.schemeStationsBlock
+  wrapper()
+  display flex
+  justify-content space-between
+  margin-bottom 150px
+.stationsColumnItem
+  padding-left 109px
+.stationsColumnItem__title
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  margin-bottom 25px
+  position relative
+  &::before
+    content ''
+    position absolute
+    left -109px
+    top 50%
+    width 75px
+    height 8px
+.stationsColumnItem__title--red
+  &::before
+    background-color #E42829
+.stationsColumnItem__title--blue
+  &::before
+    background-color #0000FE
+.stationsColumnItemList
+  li
+    fz(18)
+    line-height 1.45
+    color #000
+    padding-left 22px
+    margin-bottom 21px
+    position relative
+    &::before
+      content ''
+      position absolute
+      left 0
+      top 50%
+      transform translateY(-50%)
+      width 10px
+      height 10px
+      border-radius 50%
+      background-color #00FF01
+.stationsFormBlock
+  width 29%
+.stationsFormBlock__title
+  font-weight bold
+  fz(24)
+  line-height 1.407
+  text-transform uppercase
+  color #000
+  margin-bottom 20px
+.stationsForm__input
+  display block
+  width 100%
+  fz(16)
+  line-height 1.45
+  letter-spacing 0.05em
+  text-transform uppercase
+  color #000
+  border 1px solid #C5C5C5
+  padding 20px 12px
+  margin-bottom 37px
+  &::placeholder
+    color #000
+.stationsForm__textarea
+  display block
+  width 100%
+  fz(16)
+  line-height 1.45
+  letter-spacing 0.05em
+  text-transform uppercase
+  color #000
+  border 1px solid #C5C5C5
+  padding 20px 12px
+  margin-bottom 22px
+  min-height 180px
+  &::placeholder
+    color #000
+.stationsForm__btn
+  background: #23164B;
+  border-radius: 87px;
+  padding 20px 27px
+  fz(18)
+  line-height 1.45
+  letter-spacing 0.05em
+  text-transform uppercase
+  color #fff
+  border none
+  cursor pointer
+  transition all .3s
+  &:hover
+    background: lighten(#23164B, 20%)
+// scheme page styles end
