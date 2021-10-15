@@ -444,5 +444,122 @@ a
       max-width 690px
       margin 0 auto
 
-
 // integrated-development page styles end
+
+// structure-directors page styles start
+.structureBlock
+  padding-top cw(67)
+  wrapper()
+  margin-bottom cw(230)
+.structureBlockRow
+  display flex
+  justify-content center
+  margin-bottom cw(110)
+.structureBlockRow--head
+  .structureBlockRowItem
+    position relative
+    &::before
+      content url('../images/icons/arrow-down2.svg')
+      position absolute
+      left -31%
+      top 90%
+      transform translateY(-50%)
+    &::after
+      content url('../images/icons/arrow-down3.svg')
+      position absolute
+      right -31%
+      top 90%
+      transform translateY(-50%)
+    .structureBlockRowItem__content
+      width 530px
+      text-align center
+      padding 50px 90px
+.structureBlockColumn
+  margin-left cw(85)
+  margin-right cw(85)
+  width 510px
+.structureBlockColumnItem
+  width 100%
+  margin-bottom cw(160)
+  border 1px solid #E42829
+  min-height 240px
+  padding 30px
+  display flex
+  justify-content center
+  align-items center
+  position relative
+  &::after
+    content url('../images/icons/arrow-down1.svg')
+    position absolute
+    bottom -150px
+    height 136px
+    left 50%
+    transform translateX(-50%)
+.structureBlockColumnItem:last-child
+  margin-bottom 0
+  &::after
+    display none
+.structureBlockColumnItem--special1
+  border 1px solid #EAEAEA
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.17);
+  width 123%
+.structureBlockColumnItemContent
+  fz(28)
+  line-height 1.1
+  text-align center
+  color #000
+.structureBlockColumnItemContent__title
+  text-align left
+  margin-bottom cw(22)
+.structureBlockColumnItemContentContacts
+  display flex
+  justify-content space-between
+// .structureBlockContactsColumn__item
+//   padding-bottom cw(38)
+.structureBlockContactItem__tel
+  display inline-block
+  fz(28)
+  line-height 1.082
+  color #000
+  letter-spacing 0.01em
+  padding-left cw(41)
+  margin-bottom cw(38)
+  position relative
+  &::before
+    content url('../images/icons/phone-icon1.png')
+    position absolute
+    top 0
+    left 0
+.structureBlockContactItem__email
+  fz(28)
+  line-height 1
+  color #000
+  text-transform lowercase
+  padding-left cw(41)
+  position relative
+  &::before
+    content url('../images/icons/mail-icon1.svg')
+    position absolute
+    top 0
+    left 0
+.structureBlockContactItem__link
+  display inline-block
+  fz(28)
+  line-height 1.082
+  color #000
+  margin-bottom cw(38)
+  padding-left cw(31)
+  position relative
+  &::before
+    content url('../images/icons/link-icon1.svg')
+    position absolute
+    top 0
+    left 0
+.structureBlockContactItemSocials
+  display flex
+.structureBlockContactItemSocials__link
+  display inline-block
+  & + .structureBlockContactItemSocials__link
+    margin-left cw(24)
+
+// structure-directors page styles end
