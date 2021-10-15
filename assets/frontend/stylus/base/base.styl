@@ -400,5 +400,49 @@ a
     left -50%
     .featuresSectionRowItemNumBlock
       margin-bottom cw(30)
-
 // features page styles end
+
+// integrated-development page styles start
+.developmentBlock
+  wrapper()
+  padding-top cw(66)
+  margin-bottom cw(102)
+  .developmentBlock__title
+    max-width 1164px
+    fz(24)
+    line-height 1.407
+    text-transform uppercase
+    color #000
+    padding-left cw(18)
+    margin-bottom cw(85)
+    position relative
+    &::after
+      content ''
+      position absolute
+      left 0
+      top 0
+      bottom 0
+      width 4px
+      background-color #E42829
+.developmentBlockRow
+  display flex
+  justify-content space-between
+  margin-bottom 85px
+.developmentBlockRow__item.developmentBlockRowItem
+  width 47%
+  fz(20)
+  line-height 1.45
+  color #000
+.developmentBlockRow--center
+  .developmentBlockRowItem
+    width 100%
+    color #fff
+    fz(24)
+    text-align center
+    padding 45px
+    p 
+      max-width 690px
+      margin 0 auto
+
+
+// integrated-development page styles end
