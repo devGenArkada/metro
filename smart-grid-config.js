@@ -11,6 +11,9 @@ var settings = {
         fields: '20px' /* side fields */
     },
     breakPoints: {
+        xxl: {
+            width: '1500px'
+        },
         xl: {
             width: '1400px'
         },
@@ -39,4 +42,4 @@ var settings = {
     }
 };
 
-smartgrid('./assets', settings);
+smartgrid('./assets/frontend/stylus/helpers', settings);

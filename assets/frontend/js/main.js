@@ -5,14 +5,14 @@ window.onload = function() {
   var blocks = function() {
     $( window ).resize(function() {
       // header Height
-      var headerFunction = function() {
+      function headerFunction() {
         var headerHeight = $('.header').height();
         var firstScreenHeight = 'calc(100vh - ' + headerHeight + 'px)';
         $('.firstScreen').css('min-height', firstScreenHeight);
       }
       
       // firstScreenTitle Height
-      var firstScreenTitleFunction = function() {
+      function firstScreenTitleFunction() {
         var firstScreenTitleHeight = $('.firstScreen__title').height();
         var firstScreenTitleStrongTop = +firstScreenTitleHeight + 20;
         var firstScreenTitleStrongTop = firstScreenTitleStrongTop + 'px';
@@ -20,7 +20,7 @@ window.onload = function() {
       }
       
       // firstScreen Height
-      var firstScreenHeightFunction = function(){
+      function firstScreenHeightFunction(){
         var firstScreenHeight = $('.firstScreen').height();
         var firstScreenTitleHeight = $('.firstScreen__title').height();
         var firstScreenBlockHeight = 'calc(' +firstScreenHeight + 'px - ' + +firstScreenTitleHeight + 'px)';
@@ -28,15 +28,17 @@ window.onload = function() {
       }
   
       // firstScreenBlock width
-      var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
-      var firstScreenTitleStrongLeft = +firstScreenBlockLeftWidth + 20;
-      var firstScreenTitleStrongLeft = firstScreenTitleStrongLeft + 'px';
-      $('.firstScreen__title strong').css('left', firstScreenTitleStrongLeft);
+      function firstScreenBlockLeftWidthFunction () {
+        var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
+        var firstScreenTitleStrongLeft = +firstScreenBlockLeftWidth + 20;
+        var firstScreenTitleStrongLeft = firstScreenTitleStrongLeft + 'px';
+        $('.firstScreen__title strong').css('left', firstScreenTitleStrongLeft);
+      }
       
       // firstScreenBlockLeftList max-width
-      var firstScreenBlockLeftWidthFunction = function (){
+      function firstScreenBlockLeftMaxWidthFunction() {
         var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
-        var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftWidth -30;
+        var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftWidth - 30;
         var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftListMaxWidth + 'px';
         $('.firstScreenBlockLeftList').css('max-width', firstScreenBlockLeftListMaxWidth);
       }
@@ -45,9 +47,30 @@ window.onload = function() {
       firstScreenTitleFunction();
       firstScreenHeightFunction();
       firstScreenBlockLeftWidthFunction();
+      firstScreenBlockLeftMaxWidthFunction();
     }).resize();
   }
 
+  var mobileMenu = function() {
+    // mobile menu
+    $('.mobileMenuBtn').on('click', function () {
+      $('.mobileMenuBtn').toggleClass('mobileMenuBtn--active');
+      $('.headerMenuWrapper').toggleClass('headerMenuWrapper--mobile');
+      // $('.header__nav').toggleClass('header__nav--mobile');
+    });
+
+    $('.mobile__menu-link').on('click', function () {
+      $('.mobileMenuBtn').removeClass('mobileMenuBtn--active');
+      $('.headerMenuWrapper').removeClass('headerMenuWrapper--mobile');
+      // $('.header__nav').removeClass('header__nav--mobile');
+    });
+  }
+
+
+
   blocks();
+  mobileMenu();
 
 };
+
+
