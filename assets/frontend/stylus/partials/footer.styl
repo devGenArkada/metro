@@ -19,30 +19,43 @@
   display flex
   justify-content space-between
   align-items center
+  xs(flex-direction, column)
   // justify-content space-around
   // align-items stretch
 .footerContentColumn
   &:last-child
     margin-right 200px
+    sm(margin-right, 0)
 .footerContentLogoBox
   margin-left cw(170)
+  sm(margin-left, 0)
   img 
     display block
     width 100%
     height auto
     object-fit cover
+    xs(max-width, 70px)
+    xs(margin-bottom, cw(30))
 .footerContentColumnItem
   font-weight 400
   fz(18)
   line-height (23/18)
   color #393939
   margin-bottom 35px
+  xs(text-align, center)
+  &:first-child
+    xs(margin-bottom, cw(5))
   &:last-child
     margin-bottom 0
+  &--social
+    xs(margin-top, 15px)
 .footerContentColumnItem__title
   margin-bottom 3px
+  xs(display, inline-block)
 .footerContentColumnItem__text
   font-weight 300
+  xs(display, inline-block)
+  // xs(margin-left, 5px)
 .footerContentColumnItemSocials
   a
     display inline-block

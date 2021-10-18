@@ -42,12 +42,21 @@ window.onload = function() {
         var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftListMaxWidth + 'px';
         $('.firstScreenBlockLeftList').css('max-width', firstScreenBlockLeftListMaxWidth);
       }
+      
+      if(window.screen.width >= 960) {
+        headerFunction(); 
+        firstScreenTitleFunction();
+        firstScreenHeightFunction();
+        firstScreenBlockLeftWidthFunction();
+        firstScreenBlockLeftMaxWidthFunction();
+      }
 
-      headerFunction(); 
-      firstScreenTitleFunction();
-      firstScreenHeightFunction();
-      firstScreenBlockLeftWidthFunction();
-      firstScreenBlockLeftMaxWidthFunction();
+      // headerFunction(); 
+      // firstScreenTitleFunction();
+      // firstScreenHeightFunction();
+      // firstScreenBlockLeftWidthFunction();
+      // firstScreenBlockLeftMaxWidthFunction();
+
     }).resize();
   }
 

@@ -43,8 +43,11 @@ a
   display flex
   justify-content space-between
   margin-bottom 52px
+  lg(flex-direction, column)
 .krdmetroFirstBlockLeft
   width 38%
+  lg(width, 100%)
+  lg(margin-bottom, cw(30))
   h1 
     padding-left cw(15)
     margin-bottom cw(64)
@@ -67,8 +70,12 @@ a
   .krdmetroFirstBlockLeft__infoCard
     padding 12px 28px 12px 52px
     max-width 420px
+    lg(margin, 0 auto)
 .krdmetroFirstBlockRight
   width 56%
+  lg(width, auto)
+  lg(max-width, 700px)
+  lg(margin, 0 auto)
   a 
     display block
     position relative
@@ -78,6 +85,7 @@ a
       left 50%
       top 50%
       transform translate(-50%, -50%)
+      lg(transform, translate(-50%, -50%) scale(0.7))
       transition all .3s
     &:hover
       &::after
@@ -90,11 +98,14 @@ a
   display flex
   justify-content space-between
   align-items stretch
+  lg(flex-direction, column)
 .krdmetroSecondBlockColumn
   width 27%
   display flex
   flex-direction column
   justify-content space-between
+  lg(width, 100%)
+  lg(margin-bottom, cw(90))
   p 
     margin-bottom 20px
   img 
@@ -102,8 +113,11 @@ a
     width 100%
     height auto
     object-fit cover
+    max-width 400px
   .krdmetroSecondBlockColumn__infoCard
     padding 30px 20px 30px 40px
+    lg(max-width, 300px)
+    lg(margin-bottom, cw(20))
 // krdMetro page styles end
 
 // scheme page styles start
