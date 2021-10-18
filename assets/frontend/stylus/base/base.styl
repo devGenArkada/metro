@@ -380,18 +380,24 @@ a
   display flex
   justify-content space-between
   align-items center
+  lg(flex-direction, column)
 .featuresSectionRow--first 
   .textInfoCard
     padding 50px 25px 50px 30px
+    lg(margin-bottom, cw(30))
 .featuresSectionRow--center
   justify-content center
-  margin-bottom cw(33)
+  margin-bottom cw(40)
 .featuresSectionRow--baseline
   align-items flex-start
   .textInfoCard
     padding 37px 16px
+    lg(margin, 0 auto cw(40))
 .featuresSectionRowItem
   max-width 700px
+  lg(max-width, none)
+  lg(text-align, center)
+  lg(margin-bottom, cw(40))
 .featuresSectionRow__infoCard
   max-width 420px
   padding 20px
@@ -411,6 +417,7 @@ a
   justify-content center
   align-items center
   margin-bottom cw(41)
+  lg(margin, 0 auto cw(41) auto)
 .featuresSectionRowItemNumBlock__content
   position relative
   left -7%
@@ -422,21 +429,29 @@ a
   .featuresSectionRowItem
     width 130%
     margin-bottom cw(60)
+    lg(width, 100%)
   .featuresSectionRowColumnImgBlock__img
     display block
     width 80%
     height auto
     object-fit cover
+    lg(max-width, 400px)
+    lg(margin, 0 auto)
+    lg(margin-bottom, cw(40))
 .featuresSectionRowColumn--center
   align-self center
   position relative
-  top -50px
+  // top -50px
 .featuresSectionRowColumn--end
   align-self flex-end
+  position relative
   .featuresSectionRowItem
     width 150%
     position relative
     left -50%
+    lg(width, 100%)
+    lg(left, 0)
+    lg(position, static)
     .featuresSectionRowItemNumBlock
       margin-bottom cw(30)
 // features page styles end
