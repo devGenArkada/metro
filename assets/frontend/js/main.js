@@ -1,345 +1,50 @@
-/*global $, jQuery, alert, console, history*/
+'use strict';
 
-
-// POPUP
-
-var appPopup = (function () {
-  'use strict';
-
-  var $popup = $(".popup");
-
-  var popupOpen = function () {
-    $popup.fadeIn();
-  };
-
-  var popupClose = function () {
-    $popup.fadeOut();
-    $('body').removeClass('hidden');
-  };
-
-  var events = function () {
-    $('.js-openPopup').on('touchstart click', function() {
-      var $this = $(this);
-      var formTitle = $this.data("form-title") ? $this.data("form-title") : $this.text() ;
-      var formType = $this.data("form-type") ? $this.data("form-type") : "";
-
-      $(".js-formTitle", $popup).text(formTitle);
-      $("input[name=type]", $popup).val(formType);
-
-      popupOpen();
-
-      return false;
-    });
-
-     $('.popup__layer, .js-closePopup').on('touchstart click', function() {
-      popupClose();
-
-      return false;
-    });
-  };
-
-  return {
-    init: function() {
-      events();
-    },
-    close: function() {
-      popupClose();
-    }
-  }
-}());
-
-
-
-// HEADER
-
-var appHeader = (function () {
-  'use strict';
-
-  var events = function() {
-    
-    $(".js-headerToggle").on("touchstart click", function() {
-      $(this).toggleClass("open");
-      $(".header__nav").toggleClass("open");
-
-      return false;
-    });
-
-    $(".js-searchLink").on("touchstart click", function() {
-      $(".search-block__form").removeClass("search-block__form--hide");
-      $(this).hide();
-
-      return false;
-    });
-
-  };
-
-  return {
-    init: function() {
-      events();
-    }
-  }
-}());
-
-
-
-// validate and send FORM actions
-
-var appForms = (function() {
-  'use strict';
-
-  var timerKeyup;
-  var timerStart = Date.now();
-  var $body = $('body');
-
-  var condPhone = function(f) {
-    var condition;
-    var count = -1;
-    var digits = f.val().replace(/[^0-9]/g,"");
-
-    if (digits[0] == "7" || digits[0] == "8") {
-      count = 11;
-    } else if (digits[0] == "9") {
-      count = 10;
-    }
-
-    condition = digits.length != count;
-
-    return (f.val() == '' || condition);
-  };
-
-  var condText = function(f) {
-    var minlenght = f.attr("minlength") * 1;
-    return (f.val() == '' || f.val().length < minlenght);
-  };
-
-  var condSelect = function(f) {
-    return (f.val() == null);
-  };
-
-  var validateForm = function($form) {
-    var triggerForm = 1;
-
-    var fieldsCond = function(selector, condition) {
-      if (triggerForm === 0) {
-        return;
-      }
-
-      $(selector, $form).each(function(i, de) {
-        var $field = $(de);
-
-        if ($field.is(":visible") == true && condition($field)) {
-          triggerForm = 0;
-        }
-      });
-    };
-
-    fieldsCond('.js-requirePhone', condPhone);
-    fieldsCond('.js-requireText', condText);
-    fieldsCond('.js-requireSelect', condSelect);
-
-    if (triggerForm == 1) {
-      $('button[type=submit]', $form)
-        .removeClass("disabled")
-        .removeAttr('disabled');
-    } else {
-      $('button[type=submit]', $form)
-        .addClass("disabled")
-        .attr({"disabled": "disabled"});
-    }
-  };
-
-  var setErrors = function(selectorName, evnt, cond) {
-    $(document).on(evnt, selectorName, function() {
-      var $field = $(this);
-
-      if ($field.val() != "") {
-        $field.toggleClass('error', cond($field));
-      }
-    });
-  };
-
-  var events = function() {
-    $(document).on('change', '.form select', function() {
-      var $form = $(this).parents('.form');
-      validateForm($form);
-    });
-
-    $(document).on('keyup', '.form input,.form textarea', function() {
-      var $form = $(this).parents('.form');
-
-      clearTimeout(timerKeyup);
-      timerKeyup = setTimeout(function() {
-        validateForm($form);
-      }, 100);
-    });
-
-    setErrors('.js-requirePhone', 'blur', condPhone);
-    setErrors('.js-requireText', 'blur', condText);
-    setErrors('.js-requireSelect', 'change', condSelect);
-
-    $(document).on('focus', '.form input,.form textarea', function() {
-      $(this).removeClass('error');
-    });
-
-    //submit forms
-    $(document).on("submit", "form", function() {
-      var $form = $(this);
-      var $formBox = $form.parents(".js-formBox");
-      var $loader = $formBox.siblings(".js-formLoader");
-      
-      var dataForm = $form.serialize();
-      dataForm +=  '&action=post_form_contact';
-
-      $body.addClass('cursor-wait');
-      $formBox.hide();
-      $loader.fadeIn();
-       
-      $.ajax({
-        url : "/wp-admin/admin-ajax.php",
-        type : 'post',
-        data : dataForm,
-        timeout: 9999,
-        success: function(data) {
-          var $formAnswer = $formBox.siblings(".js-formAnswerSend");
-
-          //$('.form input,.form textarea').val("");
-          $body.removeClass('cursor-wait');
-          $loader.hide();
-          $formAnswer.fadeIn();
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-          var $formAnswer =  $formBox.siblings(".js-formAnswerError");
-
-          $body.removeClass('cursor-wait');
-          $loader.hide();
-          $formAnswer.fadeIn();
-
-          setTimeout(function() {
-            $formAnswer.hide();
-            $formBox.show();
-          }, 4500);
-        }
-      });
-
-      return false;
-    });
-  }
-
-  return {
-    init: function() {
-      events();
-    }
-  }
-}());
-
-
-
-// CONTENT
-
-var appContent = (function() {
-  'use strict';
-
-  //add Slider
-  var slider = function() {
-
-    // slider news-list
-    if ($('.news-list__slider').length) {
-      var sliderPromo = new Swiper('.news-list__slider', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        wrapperClass: 'news-list__slider-box',
-        slideClass: 'news-list__slider-item',
-        navigation: {
-          nextEl: '.news-list__btn-right',
-          prevEl: '.news-list__btn-left'
-        },
-        breakpoints: {
-          540: {//width >= 320px
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          1440: {
-            slidesPerView: 2,
-            spaceBetween: 40
-          },
-          1680: {
-            slidesPerView: 2,
-            spaceBetween: 105
-          }
-        }/* ,
-        pagination: {
-          el: '.slider__count',
-          type: 'fraction'
-        } */
-      });
-    }
-  };
-
-
-  var events = function() {
-    
-  };
+window.onload = function() {
+  $(window).on('resize', function(){
+    console.log('fdfdf');    
+  });
 
   var blocks = function() {
-
     $( window ).resize(function() {
+      console.log('1');
       // header Height
       var headerHeight = $('.header').height();
       var firstScreenHeight = 'calc(100vh - ' + headerHeight + 'px)';
-      $('.firstScreen').css('min-height', firstScreenHeight);      
+      $('.firstScreen').css('min-height', firstScreenHeight);
       
-      // firstScreen Height
-      var firstScreenHeight = $('.firstScreen').height();
+      // // firstScreenTitle Height
       var firstScreenTitleHeight = $('.firstScreen__title').height();
+      // console.log(firstScreenTitleHeight);
+      var firstScreenTitleStrongTop = +firstScreenTitleHeight + 20;
+      // console.log(firstScreenTitleStrongTop);
+      var firstScreenTitleStrongTop = firstScreenTitleStrongTop + 'px';
+      // console.log(firstScreenTitleStrongTop);
+      $('.firstScreen__title strong').css('top', firstScreenTitleStrongTop);
+      
+      // // firstScreen Height
+      var firstScreenHeight = $('.firstScreen').height();
+      console.log(firstScreenHeight);
+      var firstScreenTitleHeight = $('.firstScreen__title').height();
+      console.log(firstScreenTitleHeight);
       var firstScreenBlockHeight = 'calc(' +firstScreenHeight + 'px - ' + +firstScreenTitleHeight + 'px)';
+      console.log(firstScreenBlockHeight);
       $('.firstScreenBlock').css('min-height', firstScreenBlockHeight);
   
-      // firstScreenBlock width
+      // // firstScreenBlock width
       var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
       var firstScreenTitleStrongLeft = +firstScreenBlockLeftWidth + 20;
       var firstScreenTitleStrongLeft = firstScreenTitleStrongLeft + 'px';
       $('.firstScreen__title strong').css('left', firstScreenTitleStrongLeft);
       
-      // firstScreenTitle Height
-      var firstScreenTitleHeight = $('.firstScreen__title').height();
-      var firstScreenTitleStrongTop = +firstScreenTitleHeight + 20;
-      var firstScreenTitleStrongTop = firstScreenTitleStrongTop + 'px';
-      $('.firstScreen__title strong').css('top', firstScreenTitleStrongTop);
-      
-      // firstScreenBlockLeftList max-width
+      // // firstScreenBlockLeftList max-width
       var firstScreenBlockLeftWidth = $('.firstScreenBlockLeft').width();
       var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftWidth -30;
       var firstScreenBlockLeftListMaxWidth = +firstScreenBlockLeftListMaxWidth + 'px';
       $('.firstScreenBlockLeftList').css('max-width', firstScreenBlockLeftListMaxWidth);
     }).resize();
-
-
-    // var 
-    
-  };
-  
-
-  return {
-    init: function() {
-      events();
-      slider();
-      blocks();
-    }
   }
-}());
 
+  blocks();
 
-
-// MAIN
-
-(function ($) {
-  'use strict';
-
-  document.addEventListener("DOMContentLoaded", function(event) { 
-    appHeader.init();
-    appContent.init();
-    appForms.init();
-    //appPopup.init();
-  });
-}(jQuery));
+};
