@@ -44,7 +44,6 @@ window.onload = function() {
       }
 
       function featuresBlocks () {
-
         function thirdRowSecondColumn() {
           let firstColumnOffset = $('.featuresSectionRowColumn--start .featuresSectionRowItem').offset().top
           let firstColumnHeight = $('.featuresSectionRowColumn--start .featuresSectionRowItem').height()
@@ -69,10 +68,13 @@ window.onload = function() {
           }
         }
 
-        
         thirdRowSecondColumn();
         thirdRowThirdColumn();
       }
+
+      
+
+
       
       
       if(window.screen.width >= 960) {
@@ -83,16 +85,10 @@ window.onload = function() {
         firstScreenBlockLeftMaxWidthFunction();
       }
 
-      if(window.screen.width >= 1200) {
+      if(window.screen.width >= 1200 && ($('.featuresSectionRowColumn--center').is('.featuresSectionRowColumn--center'))) {
         featuresBlocks();
       }
 
-
-      // headerFunction(); 
-      // firstScreenTitleFunction();
-      // firstScreenHeightFunction();
-      // firstScreenBlockLeftWidthFunction();
-      // firstScreenBlockLeftMaxWidthFunction();
 
     }).resize();
   }
