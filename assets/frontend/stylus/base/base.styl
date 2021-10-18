@@ -123,13 +123,14 @@ a
 // scheme page styles start
 .schemeBlock
   wrapper()
-  padding-top 89px
-  margin-bottom 145px
+  padding-top cw(89)
+  margin-bottom cw(145)
   border-radius 50px
 .schemeBlockImgBlock
   width 80%
   margin 0 auto
   position relative
+  sm(width, 100%)
   img 
     display block
     width 100%
@@ -144,6 +145,7 @@ a
   border-radius cw(87)
   padding 17px 23px
   transition all .3s
+  sm(display, none)
   span
     font-weight 550
     fz(18)
@@ -161,9 +163,16 @@ a
   wrapper()
   display flex
   justify-content space-between
-  margin-bottom 150px
+  margin-bottom cw(150)
+  md(flex-wrap, wrap)
+  md(justify-content, space-around)
+  xs(flex-direction, column)
+  xs(align-items, center)
 .stationsColumnItem
   padding-left 109px
+  md(margin-bottom, cw(50))
+  sm(padding-left, 50px)
+  xs(width, fit-content)
 .stationsColumnItem__title
   fz(24)
   line-height 1.407
@@ -175,8 +184,12 @@ a
     content ''
     position absolute
     left -109px
+    sm(left, -50px)
+    transform: translateY(-50%);
     top 50%
     width 75px
+    sm(width, 38px)
+    sm(height, 5px)
     height 8px
 .stationsColumnItem__title--red
   &::before
@@ -204,6 +217,9 @@ a
       background-color #00FF01
 .stationsFormBlock
   width 29%
+  md(width, 100%)
+  md(max-width, 500px)
+  md(text-align, center)
 .stationsFormBlock__title
   font-weight bold
   fz(24)
@@ -217,13 +233,13 @@ a
   fz(16)
   line-height 1.45
   letter-spacing 0.05em
-  text-transform uppercase
   color #000
   border 1px solid #C5C5C5
   padding 20px 12px
-  margin-bottom 37px
+  margin-bottom cw(37)
   &::placeholder
     color #000
+    text-transform uppercase
 .stationsForm__textarea
   display block
   width 100%
@@ -286,6 +302,7 @@ a
     margin-bottom cw(25)
 .lawsBlock__pWrapper--central 
   margin-left 17%
+  xs(margin-left, 0)
   margin-bottom cw(35)
   p 
     max-width 850px
@@ -296,13 +313,17 @@ a
   display flex
   justify-content space-between
   margin-bottom cw(68)
+  lg(flex-direction, column)
 .lawsBlockTextBlockColumn
   width 30%
+  lg(width, 100%)
+  lg(margin-bottom, cw(25))
   &--infoCard
     width 424px
     .textInfoCard
       padding 41px 35px 41px
       margin-bottom 11px
+      lg(max-width, 370px)
     .lawsBlockTextBlockColumn__author
       fz(24)
       line-height 1.45
