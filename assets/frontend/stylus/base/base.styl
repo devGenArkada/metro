@@ -481,19 +481,23 @@ a
 .developmentBlockRow
   display flex
   justify-content space-between
-  margin-bottom 85px
+  margin-bottom cw(85)
+  sm(flex-direction, column)
+  p 
+    sm(margin-bottom, cw(20))
 .developmentBlockRow__item.developmentBlockRowItem
   width 47%
   fz(20)
   line-height 1.45
   color #000
+  sm(width, 100%)
 .developmentBlockRow--center
   .developmentBlockRowItem
     width 100%
     color #fff
     fz(24)
     text-align center
-    padding 45px
+    padding cw(45)
     p 
       max-width 690px
       margin 0 auto
