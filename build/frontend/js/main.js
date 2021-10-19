@@ -44,26 +44,27 @@ window.onload = function() {
       }
 
       function featuresBlocks () {
+
         function thirdRowSecondColumn() {
-          let firstColumnOffset = $('.featuresSectionRowColumn--start .featuresSectionRowItem').offset().top
-          let firstColumnHeight = $('.featuresSectionRowColumn--start .featuresSectionRowItem').height()
-          let secondColumnOffset = $('.featuresSectionRowColumn--center').offset().top
-          let newOffsetSecondColumnTop = (firstColumnOffset + firstColumnHeight)
+          var firstColumnOffset = $('.featuresSectionRowColumn--start .featuresSectionRowItem').offset().top
+          var firstColumnHeight = $('.featuresSectionRowColumn--start .featuresSectionRowItem').height()
+          var secondColumnOffset = $('.featuresSectionRowColumn--center').offset().top
+          var newOffsetSecondColumnTop = (firstColumnOffset + firstColumnHeight)
           if (secondColumnOffset < newOffsetSecondColumnTop) {
-            let secondColumnTop = newOffsetSecondColumnTop - secondColumnOffset + 'px'
+            var secondColumnTop = newOffsetSecondColumnTop - secondColumnOffset + 'px'
             $('.featuresSectionRowColumn--center').css('top', secondColumnTop);
             thirdRowThirdColumn();
           }
         }
 
         function thirdRowThirdColumn () {
-          let secondColumnOffset = $('.featuresSectionRowColumn--center').offset().top
-          let secondColumnHeight = $('.featuresSectionRowColumn--center').height()
-          let thirdColumnOffset = $('.featuresSectionRowColumn--end').offset().top
-          let newOffsetThirdColumnTop = (secondColumnOffset + secondColumnHeight)
+          var secondColumnOffset = $('.featuresSectionRowColumn--center').offset().top
+          var secondColumnHeight = $('.featuresSectionRowColumn--center').height()
+          var thirdColumnOffset = $('.featuresSectionRowColumn--end').offset().top
+          var newOffsetThirdColumnTop = (secondColumnOffset + secondColumnHeight)
           if (thirdColumnOffset < newOffsetThirdColumnTop) {
-            let thirdColumnOffset = $('.featuresSectionRowColumn--end').offset().top
-            let thirdColumnTop = newOffsetThirdColumnTop - thirdColumnOffset + 30 + 'px'
+            var thirdColumnOffset = $('.featuresSectionRowColumn--end').offset().top
+            var thirdColumnTop = newOffsetThirdColumnTop - thirdColumnOffset + 30 + 'px'
             $('.featuresSectionRowColumn--end').css('top', thirdColumnTop);
           }
         }

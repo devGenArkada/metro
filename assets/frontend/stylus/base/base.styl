@@ -526,6 +526,7 @@ a
       lg(left, calc((-28vw * 1) + 230px))
       md(left, calc((-28vw * 1) + 180px))
       sm(left, calc((-20vw * 1) + 110px))
+      xs(left, calc((15vw * 1) + -57px))
     &::after
       content url('../images/icons/arrow-down3.svg')
       position absolute
@@ -537,6 +538,7 @@ a
       lg(right, calc((-28vw * 1) + 230px))
       md(right, calc((-28vw * 1) + 180px))
       sm(right, calc((-20vw * 1) + 110px))
+      xs(right, calc((15vw * 1) + -57px))
     .structureBlockRowItem__content
       width 530px
       text-align center
@@ -549,6 +551,7 @@ a
   width 510px
   md(width, 45%)
   md(margin, 0)
+  xs(width, 48%)
 .structureBlockColumnItem
   width 100%
   margin-bottom 160px
@@ -559,6 +562,7 @@ a
   justify-content center
   align-items center
   position relative
+  xs(padding, cw(20))
   &::after
     content url('../images/icons/arrow-down1.svg')
     position absolute
@@ -583,6 +587,7 @@ a
 .structureBlockColumnItemContent__title
   text-align left
   margin-bottom cw(22)
+  xs(text-align, center)
 .structureBlockColumnItemContentContacts
   display flex
   justify-content space-between
@@ -598,11 +603,18 @@ a
   padding-left cw(41)
   margin-bottom cw(38)
   position relative
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
   &::before
     content url('../images/icons/phone-icon1.png')
     position absolute
     top 0
     left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
 .structureBlockContactItem__email
   fz(28)
   line-height 1
@@ -612,11 +624,18 @@ a
   position relative
   md(margin-bottom, cw(38))
   md(display, inline-block)
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
   &::before
     content url('../images/icons/mail-icon1.svg')
     position absolute
     top 0
     left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
 .structureBlockContactItem__link
   display inline-block
   fz(28)
@@ -625,11 +644,18 @@ a
   margin-bottom cw(38)
   padding-left cw(31)
   position relative
+  sm(padding-left, 28px)
+  @media(max-width:768px)
+    fz(22)
+  xs(padding-left, 0)
+  xs(margin-top, 25px)
   &::before
     content url('../images/icons/link-icon1.svg')
     position absolute
     top 0
     left 0
+    xs(left, 50%)
+    xs(transform, translate(-50%, -25px))
 .structureBlockContactItemSocials
   display flex
   md(justify-content, center)
